@@ -1,22 +1,16 @@
 def calculator(number1, number2, operator):
 	if(operator == "+"):
-		print(number1 + number2)
-		return True
+		return number1 + number2
 	elif(operator == "-"):
-		print(number1 - number2)
-		return True
+		return number1 - number2
 	elif(operator == "*"):
-		print(number1 * number2)
-		return True
+		return number1 * number2
 	elif(operator == "/"):
-		print(number1 /  number2)
-		return True
+		return number1 /  number2
 	elif(operator == "//"):
-		print(number1 // number2)
-		return True
+		return number1 // number2
 	elif(operator == "**"):
-		print(number1 ** number2)
-		return True
+		return number1 ** number2
 	else:
 		print("Invalid operator")
 		return False
@@ -39,8 +33,7 @@ Return
 float
 	outcome of the +,-,*,/,//,** operation
 boolean
-	True if the operation is valid
-	False if the operation is invalid
+	False if the inputed operator is invalid
 
 Example
 -------
@@ -63,7 +56,7 @@ def input_output():
 	number1 = float(input("Enter first number: "))
 	number2 = float(input("Enter second number: "))
 	operator = input("Enter the operation: ")
-	calculator(number1, number2, operator)
+	print(calculator(number1, number2, operator))
 	exit = input("Do you wish to exit? ")
 	if(exit != "y"):
 		input_output()
