@@ -1,6 +1,7 @@
 def calculate_apr(principal, interest_rate, years):
-	if((isinstance(principal, float) or isinstance(principal,int))  and (isinstance(interest_rate, float) and interest_rate >= 0)
-	 and isinstance(years, int)):
+	if( (isinstance(principal, float) or isinstance(principal,int)) and principal >=  0
+	and isinstance(interest_rate, float) and interest_rate >= 0
+	and isinstance(years, int) and years >= 0):
 		for i in range(years):
 			principal = principal*(1 + interest_rate)	#use the initial principal and update it while in the loop.
 		return principal
@@ -42,3 +43,4 @@ invalid parameter
 print(f'The outcome of investing $500 at an interest rate of 3% for 65 years is ${calculate_apr(500.0, 0.03, 65)}')
 # calculate_apr(100, 0.2, 2.5)
 # print(calculate_apr(100, - 0.2, 2.5))
+print(calculate_apr(100, 0.2,-2))

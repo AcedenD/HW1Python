@@ -5,10 +5,15 @@ def calculator(number1, number2, operator):
 		return number1 - number2
 	elif(operator == "*"):
 		return number1 * number2
-	elif(operator == "/"):
-		return number1 /  number2
-	elif(operator == "//"):
-		return number1 // number2
+	elif(operator == "/" or operator == "//" ):
+		if (number2 == 0):
+			print("Error: can't divide by 0")
+			return False
+		else:
+			if(operator == "/"):
+				return number1 / number2
+			else:
+				return number1 // number2
 	elif(operator == "**"):
 		return number1 ** number2
 	else:
@@ -57,7 +62,11 @@ def input_output():
 	number2 = float(input("Enter second number: "))
 	operator = input("Enter the operation: ")
 	print(calculator(number1, number2, operator))
-	exit = input("Do you wish to exit? ")
+	exit = input("Do you wish to exit?[y/n] ")
+	while (exit != "y" and exit != "n"):
+		exit = input("Please enter 'y' or 'n': ")
+		if(exit == "y" or exit == "n"):
+			break
 	if(exit != "y"):
 		input_output()
 	else :
