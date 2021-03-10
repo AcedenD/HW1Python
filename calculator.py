@@ -56,18 +56,24 @@ operator = "//"
 2.4 // 2 = 1
 """
 
+def is_float(string):
+	try:
+		float(string)
+		return True
+	except ValueError:
+		return False
 
 def input_output():
 	number1 = input("Enter first number: ")
-	while (not isinstance(number1,float)):
+	while (not is_float(number1)):
 		number1 = input("Enter a float number: ")
-		if(number1.isnumeric()):
+		if(is_float(number1)):
 			number1 = float(number1)
 			break
 	number2 = input("Enter second number: ")
-	while (not (isinstance(number2,float))):
+	while (not is_float(number2)):
 		number2 = input("Enter a float number: ")
-		if(number2.isnumeric()):
+		if(is_float(number2)):
 			number2 = float(number2)
 			break
 	operator = input("Enter the operation: ")
