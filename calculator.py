@@ -58,8 +58,18 @@ operator = "//"
 
 
 def input_output():
-	number1 = float(input("Enter first number: "))
-	number2 = float(input("Enter second number: "))
+	number1 = input("Enter first number: ")
+	while (not isinstance(number1,float)):
+		number1 = input("Enter a float number: ")
+		if(number1.isnumeric()):
+			number1 = float(number1)
+			break
+	number2 = input("Enter second number: ")
+	while (not (isinstance(number2,float))):
+		number2 = input("Enter a float number: ")
+		if(number2.isnumeric()):
+			number2 = float(number2)
+			break
 	operator = input("Enter the operation: ")
 	print(calculator(number1, number2, operator))
 	exit = input("Do you wish to exit?[y/n] ")
